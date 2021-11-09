@@ -83,8 +83,8 @@ class Tsukuba:
 	def __event_newMgmtPlugin(self):
 		## 1 mgmt uses 2 leaf group ports
 		## Communication * 2
-		print('*** 追加Mgmtが、Leafに経路*2を占用する。')
-		if self.leafPool.plugin(2) == -1:
+		print('*** 追加Mgmtが、Leafに管理IF*2を占用する。ただ、Leafの管理IFは計上対象外')
+		if self.leafPool.plugin(0) == -1:
 			print('*** Mgmt追加によりLeaf枯渇が発生。')
 			self.__event_newLeafPlugin()
 
